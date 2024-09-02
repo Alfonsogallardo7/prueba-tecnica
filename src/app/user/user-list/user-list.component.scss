@@ -1,0 +1,53 @@
+header {
+    h1 {
+        text-align: center;
+    }
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .filters {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0px;
+        gap: 5px;
+        form {
+            display: flex;
+            gap: 10px;
+            input {
+                border-radius: 16px;
+                padding: 5px;
+                border: 1px solid black;
+            }
+            button {
+                border-radius: 16px;
+                padding: 5px;
+                border: 1px solid black;
+            }
+        }
+    }
+
+    .user {
+        display: flex;
+        flex-direction: row;
+        margin: 10px 0px;
+        padding: 10px;
+        gap: 10px;
+        border-radius: 16px;
+        border: 1px solid black;
+        background: #d6eaf8;
+    }
+
+    .pagination {
+        padding-top: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        button {
+            background-color: transparent;
+            border: none;
+        }
+    }
+}

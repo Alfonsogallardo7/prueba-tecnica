@@ -1,0 +1,34 @@
+<header>
+    <h1>Welcome</h1>
+</header>
+
+<body>
+    <div class="filters">
+        <span>Filters</span>
+        <form (ngSubmit)="onSearch()">
+            <input type="text" name="name" placeholder="Name" [(ngModel)]="filter.name">
+            <input type="text" name="surname1" placeholder="Surname 1" [(ngModel)]="filter.surname1">
+            <input type="text" name="surname2" placeholder="surname2" [(ngModel)]="filter.surname2">
+            <input type="email" name="email" placeholder="Email" [(ngModel)]="filter.email">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <div *ngFor="let user of users" class="user">
+        <span>Name: {{user.name}}</span>
+        <span>Surname: {{user.surname1}} {{user.surname2}}</span>
+        <span>Email: {{user.email}}</span>
+    </div>
+
+    <div *ngIf="totalUsers > pageSize" class="pagination">
+        <button (click)="onPageChange(page - 1)" [disabled]="page === 1"><i
+                class="material-icons">arrow_back</i></button>
+        <span>{{page}} to {{totalPage}}</span>
+        <button (click)="onPageChange(page + 1)" [disabled]="page * pageSize >= totalUsers"><i
+                class="material-icons">arrow_forward</i></button>
+    </div>
+
+    <div *ngIf="totalUsers === 0">
+        <span>No users found</span>
+    </div>
+</body>
